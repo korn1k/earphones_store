@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>FAN - personal online shopping tool</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mykyta Koryliuk">
+    <meta name="purpose" content="This website is made for the project provided by Front-End and JS classes">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="stylesheet.css" rel="stylesheet">
+</head>
+
+<body onload="cartLogo(); dateCheck(); displayItems(); orderFilter(); changePage('page1');">
+    <main>
+        <nav>
+            <ul>
+                <li id="page1" onclick="changePage(this.id);"><a href="#Index" id="logo" target="_self">FAN ONLINE</a></li>
+                <div id="searchMenu">
+                    <li><input type="text" id="topSearchBar" placeholder="Search..."></li>
+                    <li><button><img src="images/glass.png" alt="glass"></button></li>
+                </div>
+                <div id="right">
+                    <li><a href="#Contact" class="links" target="_self">Contact</a></li>
+                    <li><a href="#About" class="links" target="_self">About</a></li>
+                    <li id="page4" onclick="changePage(this.id);"><a href="#Cart" target="_self"><img src="images/emptyCart.png" id="cart" alt="shopping cart"></a></li>
+                </div>
+            </ul>
+        </nav>
+    
+        <!-- Main Page -->
+        <div id="index">
+            <header>
+                <img id="girl" src="images/photo.png" alt="girl with headphones">
+                <h1>keep calm<br />and get<br /><i>your</i><br />early bird<br />discount</h1>
+            </header>
+
+        <section id="filter">
+            <div id="date"></div>
+            <div id = "topFilters">
+            <div id="type">
+                Sort By <select id="SortByType" onchange="orderFilter();">
+                            <option selected disabled>Order By</option>
+                            <option>Featured</option>
+                            <option>Low-price to high</option>
+                            <option>High-price to low</option>
+                        </select>
+            </div>
+            <div id="currency" onchange="orderFilter();">
+                Currency <select id="currencySelector">
+                    <option selected>CAD</option>
+                    <option>USD</option>
+                </select>
+            </div>
+        </div>
+        </section>
+
+        <div id="displayProducts">
+                <div id="line"></div>
+            <div id="outputArea"></div>
+                <section id="extraFilter">
+                    <h2>Filters:</h2>
+                    <div id="brandsFilter">
+                        <h3>Brands</h3>
+                        <input type="checkbox" id="basic" name="brands" value="All" onclick="unCheck()" checked>All<br />
+                        <input type="checkbox" class="brands" name="brand" value="Apple" onclick="document.getElementById('basic').checked = false">Apple<br />
+                        <input type="checkbox" class="brands" name="brand" value="JBL" onclick="document.getElementById('basic').checked = false">JBL<br />
+                        <input type="checkbox" class="brands" name="brand" value="UBI" onclick="document.getElementById('basic').checked = false">UBI<br />
+                        <input type="checkbox" class="brands" name="brand" value="PROF" onclick="document.getElementById('basic').checked = false">PROF<br />
+                        <input type="checkbox" class="brands" name="brand" value="PRIM" onclick="document.getElementById('basic').checked = false">PRIM<br />
+                        <input type="checkbox" class="brands" name="brand" value="New Bose" onclick="document.getElementById('basic').checked = false">New Bose<br />
+                    </div>
+
+                    <div id="categoryFilter">
+                        <h3>Category</h3>
+                        <input type="checkbox" class="categories" name="category" value="Wireless" onclick="console.log(this.value)">Wireless<br />
+                        <input type="checkbox" class="categories" name="category" value="Kids" onclick="console.log(this.value)">Kids<br />
+                        <input type="checkbox" class="categories" name="category" value="On-Ear" onclick="console.log(this.value)">On-Ear<br />
+                    </div>
+                <input type="button" id="btnFilter" value="Start search" onclick="displayItems()">
+            </section>
+        </div>
+
+        <footer>
+            <p>©2019 FAN online shopping <a href="mailto:craftbazinga@gmail.com" id="gmail">(Mykyta Koryliuk)</a>. This website is made for the project task provided by Front-End and JS classes. <br />Fanshawe College, IWD1</p>
+            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" style="color: #FFFFFF" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" style="color: #FFFFFF" title="Flaticon">www.flaticon.com</a></div>
+        </footer>
+        </div>
+    <!-- End of main page -->
+
+    <!-- Cart Page -->
+        <div id="cartSecondPage">
+            <div id="itemsList"></div>
+            <div id="finalOutput"></div>
+            <input type="button" id="btnConfirm" value="Confirm purchase" onclick="confirmPurchase();">
+        </div>
+    <!-- End of cart page -->
+    </main>
+
+<script src="behaviour.js"></script>
+</body>
+</html>
