@@ -1,7 +1,9 @@
 # earphones_store_2019
-Earphones store with items, cart, and filters implementation.
+[SCHOOL] Earphones Store is a web application for shopping online. You can buy and filtrate items depending on the selection you choose.
 
-URL to view live example: https://korn1k.github.io/earphones_store_2019/index.html
+TECHNOLOGIES: JavaScript, HTML, CSS
+
+URL to view live example: https://korn1k.github.io/earphones_store_2019/index.html (ADEQUATE MOBILE VIEW INCLUDED) 
 
 INSTALLATION ON YOUR LOCAL PC:
 
